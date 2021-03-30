@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 
+
 class GameCanvasElement():
     def __init__(self, game_app, x=0, y=0):
         self.x = x
@@ -33,6 +34,7 @@ class GameCanvasElement():
     def update(self):
         pass
 
+
 class Text(GameCanvasElement):
     def __init__(self, game_app, text, x=0, y=0):
         self.text = text
@@ -50,12 +52,17 @@ class Text(GameCanvasElement):
         
 
 class Sprite(GameCanvasElement):
-    def __init__(self, game_app, image_filename, x=0, y=0):
+    def __init__(self, game_app, image_filename, x=0, y=0, photo_image=None):
         self.image_filename = image_filename
+
+        self.photo_image = photo_image
+
         super().__init__(game_app, x, y)
 
     def init_canvas_object(self):
-        self.photo_image = tk.PhotoImage(file=self.image_filename)
+        if not self.photo_image:
+            self.photo_image = tk.PhotoImage(file=self.image_filename)
+
         self.canvas_object_id = self.canvas.create_image(
             self.x, 
             self.y,
