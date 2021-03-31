@@ -15,8 +15,10 @@ class Dot(Sprite):
 
 
 class Wall(Sprite):
-    def __init__(self, app, x, y, photo_image=None):
-        super().__init__(app, 'images/wall.png', x, y, photo_image=photo_image)
+
+    def __init__(self, app, x, y):
+        super().__init__(app, 'images/brick-wall.png', x, y)
+
 
 
 class Maze:
