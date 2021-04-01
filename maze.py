@@ -61,7 +61,7 @@ class Maze:
 
         self.init_active_dots()
 
-        self.wall_image = tk.PhotoImage(file='images/wall.png')
+        self.wall_image = tk.PhotoImage(file='images/brick-wall.png')
         self.dot_image = tk.PhotoImage(file='images/dot.png')
 
         for i in range(self.get_height()):
